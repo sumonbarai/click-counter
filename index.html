@@ -1,48 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS File -->
-        <link rel="stylesheet" href="/src/style.css" />
-        <title>Click Counter</title>
-    </head>
-    <body>
-        <div class="main-wrapper">
-            <!-- Click Container Start -->
-            <div class="box-container">
-                <h2 id="count" class="box-container-count">12</h2>
-                <div class="button-container">
-                    <button id="decrement" class="btn decrement-btn">
-                        Decrement
-                    </button>
-                    <button id="increment" class="btn increment-btn">
-                        Increment
-                    </button>
-                </div>
-            </div>
-            <!-- Click Container End -->
+    <!-- CSS File -->
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Click Counter</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <!-- Click Container Start -->
+      <div class="w-100" id="all_counter"></div>
+      <!-- Click Container End -->
 
-            <!-- Click Container Start -->
-            <div class="box-container">
-                <h2 id="count" class="box-container-count">12</h2>
-                <div class="button-container">
-                    <button class="btn decrement-btn">Decrement</button>
-                    <button class="btn increment-btn">Increment</button>
-                </div>
-            </div>
-            <!-- Click Container End -->
+      <!-- Total Container Start -->
+      <div class="box-container">
+        <h2 id="total" class="total">Total = 24</h2>
+      </div>
+      <!-- Total Container End -->
 
-            <!-- Total Container Start -->
-            <div class="box-container">
-                <h2 id="total" class="total">Total = 24</h2>
-            </div>
-            <!-- Total Container End -->
-
-            <!-- Create Counter Button -->
-            <button class="create-counter">Create Counter +</button>
-        </div>
-        <script type="module" src="/src/main.js"></script>
-    </body>
+      <!-- Create Counter Button -->
+      <button class="create-counter" onclick="createCounterFn()">
+        Create Counter +
+      </button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

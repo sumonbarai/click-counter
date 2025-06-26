@@ -1,36 +1,52 @@
-import { createStore } from "redux";
+import {
+  createCounter,
+  incrementActionCreator,
+} from "./redux/features/counter/actionCreator";
+import { CREATE_COUNTER } from "./redux/features/counter/actionType";
+import store from "./redux/store";
 
-const initialValue = {
-    id: "1",
-    count: 0,
-};
+const all_counter = document.getElementById("all_counter");
 
-function reducer(state = initialValue, action) {
-    if ("increment" === action.type) {
-        return {
-            ...state,
-            count: state.count + 1,
-        };
-    } else if ("decrement" === action.type) {
-        return {
-            ...state,
-            count: state.count - 1,
-        };
-    } else {
-        return state;
-    }
+render();
+
+// all functionality
+
+function render() {
+  const counterState = store.getState();
+
+  let template = "";
+  counterState.forEach((counter) => {
+    template += `<div class="box-container">
+          <h2 id="count" class="box-container-count">${counter.count}</h2>
+          <div class="button-container">
+            <button  class="btn decrement-btn" onclick="decrement(${counter.id})" >Decrement</button>
+            <button  class="btn increment-btn" onclick="increment(${counter.id})" >Increment</button>
+          </div>
+        </div>`;
+  });
+
+  all_counter.innerHTML = template;
 }
 
-const store = createStore(reducer);
+function increment(id) {
+  store.dispatch(incrementActionCreator(id));
+}
 
-document.getElementById("increment").addEventListener("click", function () {
-    store.dispatch({ type: "increment" });
+function decrement() {
+  console.log("decrement");
+}
+
+function createCounterFn() {
+  //   store.dispatch({
+  //     type: CREATE_COUNTER,
+  //   });
+  store.dispatch(createCounter());
+}
+
+store.subscribe(() => {
+  render();
 });
 
-document.getElementById("decrement").addEventListener("click", function () {
-    store.dispatch({ type: "decrement" });
-});
-
-store.subscribe(function () {
-    console.log(store.getState());
-});
+window.increment = increment;
+window.decrement = decrement;
+window.createCounterFn = createCounterFn;

@@ -1,97 +1,99 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
 }
 
 button {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
-
+.w-100 {
+  width: 100%;
+}
 .main-wrapper,
 .box-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-wrapper {
-    margin: 0 auto;
-    width: 500px;
+  margin: 0 auto;
+  width: 500px;
 }
 
 .box-container {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 20px 20px;
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.192);
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 20px 20px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.192);
 }
 
 .box-container * {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .box-container-count {
-    color: #292929;
-    font-size: 30px;
-    padding-bottom: 20px;
+  color: #292929;
+  font-size: 30px;
+  padding-bottom: 20px;
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .btn {
-    padding: 5px 15px;
-    border-radius: 5px;
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 
 .decrement-btn {
-    color: #fff;
-    background-color: #fb343d;
-    transition: background 100ms ease-in-out;
+  color: #fff;
+  background-color: #fb343d;
+  transition: background 100ms ease-in-out;
 }
 
 .decrement-btn:hover {
-    background-color: #df2f38;
+  background-color: #df2f38;
 }
 
 .increment-btn {
-    color: #fff;
-    background-color: #2667f5;
-    transition: background 100ms ease-in-out;
+  color: #fff;
+  background-color: #2667f5;
+  transition: background 100ms ease-in-out;
 }
 
 .increment-btn:hover {
-    background-color: #2059d3;
+  background-color: #2059d3;
 }
 
 .total {
-    color: #292929;
-    font-size: 30px;
+  color: #292929;
+  font-size: 30px;
 }
 
 .create-counter {
-    align-self: flex-end;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 10px 10px;
-    font-size: 20px;
-    color: #fff;
-    background-color: #32bf1e;
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.192);
-    transition: background 100ms ease-in-out;
+  align-self: flex-end;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #32bf1e;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.192);
+  transition: background 100ms ease-in-out;
 }
 
 .create-counter:hover {
-    background-color: #2baa1b;
+  background-color: #2baa1b;
 }
