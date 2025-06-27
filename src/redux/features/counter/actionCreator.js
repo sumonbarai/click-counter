@@ -11,8 +11,10 @@ export function incrementActionCreator(id) {
     payload: { id },
   };
 }
-export function decrementActionCreator() {
+
+export function decrementActionCreator(id) {
   return {
     type: DECREMENT,
+    payload: id,
   };
 }

@@ -1,4 +1,4 @@
-import { CREATE_COUNTER, INCREMENT } from "./actionType";
+import { CREATE_COUNTER, DECREMENT, INCREMENT } from "./actionType";
 
 const initialValue = [
   {
@@ -24,9 +24,26 @@ function reducer(state = initialValue, action) {
           count: counter.count + 1,
         };
       });
-      console.log(newState);
+
       return newState;
     }
+
+    case DECREMENT: {
+      const newState = state.map((counter) => {
+        if (!(counter.id === action.payload)) {
+          return counter;
+        }
+
+        return {
+          ...counter,
+          // check count is not less then 0
+          count: counter.count <= 0 ? counter.count : counter.count - 1,
+        };
+      });
+
+      return newState;
+    }
+
     case CREATE_COUNTER: {
       return [
         ...state,

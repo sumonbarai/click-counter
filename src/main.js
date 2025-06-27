@@ -1,11 +1,13 @@
 import {
   createCounter,
+  decrementActionCreator,
   incrementActionCreator,
 } from "./redux/features/counter/actionCreator";
-import { CREATE_COUNTER } from "./redux/features/counter/actionType";
+
 import store from "./redux/store";
 
 const all_counter = document.getElementById("all_counter");
+const total = document.getElementById("total");
 
 render();
 
@@ -25,15 +27,26 @@ function render() {
         </div>`;
   });
 
+  const totalCount = counterState.reduce(
+    (accumulator, current) => accumulator + current.count,
+    0
+  );
+
   all_counter.innerHTML = template;
+  total.innerText = `Total = ${totalCount}`;
 }
 
 function increment(id) {
   store.dispatch(incrementActionCreator(id));
 }
 
-function decrement() {
-  console.log("decrement");
+function decrement(id) {
+  const state = store.getState();
+
+  const currentCounter = state.find((counter) => counter.id === id);
+
+  if (currentCounter.count <= 0) return;
+  store.dispatch(decrementActionCreator(id));
 }
 
 function createCounterFn() {
